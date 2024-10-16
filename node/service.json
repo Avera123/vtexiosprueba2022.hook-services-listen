@@ -9,6 +9,10 @@
     "status": {
       "path": "/_v/status/:code",
       "public": true
+    },
+    "hooklistener": {
+      "path": "/_v/hooklistener",
+      "public": true
     }
   }
 }

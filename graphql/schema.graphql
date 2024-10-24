@@ -1,0 +1,3 @@
+type Query {
+    getOrderDetails(orderId: String): OrderResponse @cacheControl(scope:PRIVATE)
+}

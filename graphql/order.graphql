@@ -1,0 +1,33 @@
+input Order{
+    id: String
+    sequence: String
+}
+
+type OrderResponse {
+    id: String
+    sequence: String
+    clientProfileData: [ClientProfileDataResponse]
+    items: [ItemResponse]
+    value: Float
+    status: String
+    lastChange: String
+}
+
+type ClientProfileDataResponse {
+    id: String
+    email: String
+    firstName: String
+    lastaName: String
+}
+
+type ItemResponse {
+    id: String
+    productId: String
+    quantity: Int
+    name: String
+    refId: String
+    price: Float
+    listPrice: Float
+    imageUrl: String
+    detailUrl: String
+}

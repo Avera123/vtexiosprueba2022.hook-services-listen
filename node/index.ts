@@ -6,6 +6,8 @@ import { status } from './middlewares/status'
 import { validate } from './middlewares/validate'
 import { hooklistener } from './middlewares/hooklistener'
 
+import {resolvers} from './graphql'
+
 const TIMEOUT_MS = 800
 
 const memoryCache = new LRUCache<string, any>({ max: 5000 })
@@ -42,6 +44,11 @@ declare global {
 // Export a service that defines route handlers and client options.
 export default new Service({
   clients,
+  graphql: {
+    resolvers:{
+      Query: resolvers.Query
+    },
+  },
   routes: {
     // `status` is the route ID from service.json. It maps to an array of middlewares (or a single handler).
     status: method({

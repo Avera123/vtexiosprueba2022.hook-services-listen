@@ -49,6 +49,12 @@
       "name": "ADMIN_DS"
     },
     {
+      "name": "edit_giftcards"
+    },
+    {
+      "name": "view_giftcards"
+    },
+    {
       "name": "outbound-access",
       "attrs": {
         "host": "{{account}}.vtexcommercestable.com.br",

@@ -46,7 +46,8 @@ export default new Service({
   clients,
   graphql: {
     resolvers:{
-      Query: resolvers.Query
+      Query: resolvers.Query,
+      Mutation: resolvers.Mutation
     },
   },
   routes: {

@@ -1,0 +1,17 @@
+input GiftCard {
+    quantity: Int
+    value: Float
+    userProfileId: String
+}
+
+type GiftCardResponse {
+    id: String
+    redemptionToken: String
+    redemptionCode: String
+    balance: Float
+    relationName:String
+    emissionDate: String
+    expiringDate: String
+    caption: String
+    currencyCode: String
+}

@@ -1,6 +1,5 @@
-import {json} from "co-body"
-
-import {resolvers} from '../graphql'
+import { json } from "co-body"
+import { resolvers } from '../graphql'
 
 export async function hooklistener(ctx: Context, next: () => Promise<any>) {
   const {
@@ -9,15 +8,35 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
 
   const body = await json(req)
 
-  const orderDetails = resolvers.Query.getOrderDetails(null, {
-    "orderId":"1467650501956-01"
-  }, null)
+  console.info({ body })
 
-  console.log(body, orderDetails)
+  // Validamos si el estado de la orden es el correcto
+  if(body.State != 'ready-for-handling') {
+    ctx.status = 200
+    ctx.body = {
+      "message": "OK"
+    }
+    return
+  }
+
+  // Consultamos la información detallada de la orden
+  const orderDetails = await resolvers.Query.getOrderDetails(null, {
+    "orderId": body.OrderId
+  }, ctx)
+
+  // Validamos si hay GiftCards y seleccionamos los datos para crearla.
+  const dataForGiftCard = {
+    "quantity" : orderDetails?.items[0].quantity ?? 1,
+    "value" : orderDetails?.items[0].sellingPrice ?? 50000,
+    "userProfileId": orderDetails?.clientProfileData?.userProfileId ?? "",
+  }
+
+  console.log({dataForGiftCard})
 
   ctx.status = 200
   ctx.body = {
-    "message":"OK"
+    "message": "OK",
+    "eventExample": body
   }
 
   await next()

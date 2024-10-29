@@ -4,4 +4,5 @@ type Query {
 
 type Mutation {
     postNewGiftCard(dataForGiftCard: GiftCard): GiftCardResponse @cacheControl(scope:PRIVATE)
+    postNewTransactionGiftCard(dataForGiftCardTransaction: GiftCardTransaction): GiftCardTransactionResponse @cacheControl(scope:PRIVATE)
 }

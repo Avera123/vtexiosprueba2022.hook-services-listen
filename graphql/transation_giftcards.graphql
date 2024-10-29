@@ -1,0 +1,12 @@
+input GiftCardTransaction {
+    operation: String
+    value: Float
+    description: String
+    requestId: String
+    redemptionCode: String
+    redemptionToken: String
+}
+
+type GiftCardTransactionResponse {
+    id: String
+}

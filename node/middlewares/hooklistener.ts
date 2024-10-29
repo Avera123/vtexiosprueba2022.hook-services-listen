@@ -24,6 +24,8 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
     "orderId": body.OrderId
   }, ctx)
 
+  // console.log({orderDetails})
+
   // Validamos si hay GiftCards y seleccionamos los datos para crearla.
   const dataForGiftCard = {
     "quantity" : orderDetails?.items[0].quantity ?? 1,
@@ -31,12 +33,15 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
     "userProfileId": orderDetails?.clientProfileData?.userProfileId ?? "",
   }
 
-  console.log({dataForGiftCard})
+  const createdNewGiftCard = await resolvers.Mutation.postNewGiftCard(null, dataForGiftCard, ctx)
+
+  console.log({createdNewGiftCard})
 
   ctx.status = 200
   ctx.body = {
     "message": "OK",
-    "eventExample": body
+    "eventExample": body,
+    "dataGiftCards": createdNewGiftCard
   }
 
   await next()

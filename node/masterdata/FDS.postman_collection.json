@@ -1,0 +1,1377 @@
+{
+	"info": {
+		"_postman_id": "bc130822-3b8e-4998-9d03-5b3a34ce88a9",
+		"name": "FDS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10962308",
+		"_collection_link": "https://avcweb.postman.co/workspace/Curso-VTEX-FDS~d94617af-54bc-4a50-8a65-2a45ebb0a6c4/collection/10962308-bc130822-3b8e-4998-9d03-5b3a34ce88a9?action=share&source=collection_link&creator=10962308"
+	},
+	"item": [
+		{
+			"name": "GET Feed Configuration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/orders/feed/config",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"orders",
+						"feed",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Feed Configuration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filter\": {\n        \"type\": \"FromWorkflow\",\n        \"status\": [\n            \"order-completed\",\n            \"ready-for-handling\",\n            \"start-handling\",\n            \"handling\",\n            \"waiting-ffmt-authorization\",\n            \"cancel\"\n        ]\n    },\n    \"queue\": {\n        \"visibilityTimeoutInSeconds\": 240,\n        \"messageRetentionPeriodInSeconds\": 345600\n    },\n    \"quantity\": 1261,\n    \"aproximateAgeOfOldestMessageInSeconds\": 1113.349305555555\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/orders/feed/config",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"orders",
+						"feed",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Hook Configuration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/orders/hook/config",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"orders",
+						"hook",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Hook Configuration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"filter\": {\n        \"type\": \"FromWorkflow\",\n        \"status\": [\n            \"ready-for-handling\"\n        ]\n    },\n    \"hook\": {\n        \"url\": \"https://avera--vtexiosprueba2022.myvtex.com/_v/hooklistener\",\n            \"headers\": {\n                \"value\": \"\"\n            }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/orders/hook/config",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"orders",
+						"hook",
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Service EndPoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Domain\": \"Fulfillment\",\n    \"OrderId\": \"1471650501962-01\",\n    \"State\": \"ready-for-handling\",\n    \"LastState\": \"window-to-cancel\",\n    \"LastChange\": \"2024-10-25T13:28:50.4481404Z\",\n    \"CurrentChange\": \"2024-10-25T13:28:50.589779Z\",\n    \"Origin\": {\n      \"Account\": \"vtexiosprueba2022\",\n      \"Key\": \"vtexappkey-vtexiosprueba2022-WDRTGP\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://avera--vtexiosprueba2022.myvtex.com/_v/hooklistener",
+					"protocol": "https",
+					"host": [
+						"avera--vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"_v",
+						"hooklistener"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/schemas",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"schemas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"properties\":{\n\t\t\"Domain\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"title\": \"Dominio\"\n\t\t},\n\t\t\"OrderId\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"title\": \"Id de Orden\"\n\t\t},\n\t\t\"State\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"title\": \"Estado de la Orden\"\n\t\t},\n\t\t\"LastChange\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"title\": \"Fecha último cambio\"\n\t\t},\n\t\t\"CurrentChange\": {\n\t\t\t\"type\": \"string\",\n\t\t\t\"title\": \"Fecha último cambio\"\n\t\t}\n\t},\n\t\"required\":[\n\t\t\"Domain\", \"OrderId\", \"State\"\n\t],\n\t\"v-indexed\":[\n\t\t\"Domain\", \"OrderId\", \"State\"\n\t],\n\t\"v-default-fields\":[\n\t\t\"Domain\", \"OrderId\", \"State\"\n\t],\n    \"v-security\":{\n        \"allowGetAll\": true,\n        \"publicRead\":[\"Domain\", \"OrderId\", \"State\"],\n        \"publicWrite\": [\"Domain\", \"OrderId\", \"State\"],\n        \"publicFilter\": [\"Domain\", \"OrderId\", \"State\"]\n    },\n\t\"v-cache\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/schemas/hook_events_schema_v1",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"schemas",
+						"hook_events_schema_v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Vtable Schema",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"hook_events_app\",\n    \"title\": \"Hook Events\",\n    \"tables\":[\n        {\n            \"id\":\"main\",\n            \"title\":\"Events\",\n            \"entity\":\"hook_events\",\n            \"model\":\"hook_events_schema_v1\",\n            \"fields\":{\n                \"id\":{\n                    \"width\":200\n                },\n                \"accountName\":{\n                    \"type\": \"string\",\n                    \"title\": \"Cuenta VTEX\",\n                    \"width\":200\n                },\n                \"Domain\": {\n                    \"type\": \"string\",\n                    \"title\": \"Dominio\",\n                    \"width\":200\n                },\n                \"OrderId\": {\n                    \"type\": \"string\",\n                    \"title\": \"Id de Orden\",\n                    \"width\":200\n                },\n                \"State\": {\n                    \"type\": \"string\",\n                    \"title\": \"Estado de la Orden\",\n                    \"width\":200\n                },\n                \"LastChange\": {\n                    \"type\": \"string\",\n                    \"title\": \"Fecha último cambio\",\n                    \"width\":200\n                }\n            },\n            \"list\": [\"Domain\",\"accountName\",\"OrderId\",\"State\",\"LastChange\",\"id\"],\n            \"editor\":{\n                \"settings\":{\n                    \"sections\": [\n                        {\n                            \"name\":\"Event\",\n                            \"fields\": [\"Domain\",\"accountName\", \"OrderId\",\"State\"]\n                        },\n                        {\n                            \"name\":\"Event Dates\",\n                            \"fields\": [\"LastChange\"]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/vtable/documents/hook_events?_schemas=hook_events_schema_v1&_fields=_all",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"vtable",
+						"documents",
+						"hook_events"
+					],
+					"query": [
+						{
+							"key": "_schemas",
+							"value": "hook_events_schema_v1"
+						},
+						{
+							"key": "_fields",
+							"value": "_all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Documents By Search",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/search?_schema=hook_events_schema_v2",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"search"
+					],
+					"query": [
+						{
+							"key": "_schema",
+							"value": "hook_events_schema_v2"
+						},
+						{
+							"key": "_fields",
+							"value": "id,OrderId,Domain,State,LastChange",
+							"disabled": true
+						},
+						{
+							"key": "_where",
+							"value": "Domain=\"VTEX Domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Documents By Scroll",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/scroll?_schema=hook_events_schema_v1&_fields=id,OrderId,Domain,State,LastChange&_size=1000&_page=1",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"scroll"
+					],
+					"query": [
+						{
+							"key": "_schema",
+							"value": "hook_events_schema_v1"
+						},
+						{
+							"key": "_fields",
+							"value": "id,OrderId,Domain,State,LastChange"
+						},
+						{
+							"key": "_where",
+							"value": "Domain=\"VTEX Domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						},
+						{
+							"key": "_size",
+							"value": "1000"
+						},
+						{
+							"key": "_page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"NonDuplicates\",\r\n    \"multiple\":false,\r\n    \"fields\":\"id\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/indices",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"indices"
+					],
+					"query": [
+						{
+							"key": "_where",
+							"value": "Domain=\"VTEX Domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Document By Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/documents/cb311eb1-8c94-11ef-b37f-8b9941235217?_fields=_all",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"documents",
+						"cb311eb1-8c94-11ef-b37f-8b9941235217"
+					],
+					"query": [
+						{
+							"key": "_where",
+							"value": "Domain=\"VTEX Domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						},
+						{
+							"key": "_fields",
+							"value": "_all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL Document By Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/documents/cb311eb1-8c94-11ef-b37f-8b9941235217",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"documents",
+						"cb311eb1-8c94-11ef-b37f-8b9941235217"
+					],
+					"query": [
+						{
+							"key": "_where",
+							"value": "Domain=\"VTEX Domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Document By Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Domain\":\"VTEX account\", \r\n    \"OrderId\":\"2342342342-01\",  \r\n    \"State\":\"invoiced\",\r\n    \"LastChange\":\"17-10-2014\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/documents/cb311eb1-8c94-11ef-b37f-8b9941235217",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"documents",
+						"cb311eb1-8c94-11ef-b37f-8b9941235217"
+					],
+					"query": [
+						{
+							"key": "_where",
+							"value": "Domain=\"VTEX Domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT Document By Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Domain\":\"VTEX account\", \r\n    \"OrderId\":\"2342342342-01\",  \r\n    \"State\":\"invoiced\",\r\n    \"LastChange\":\"17-10-2014\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/documents/cb311eb1-8c94-11ef-b37f-8b9941235217",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"documents",
+						"cb311eb1-8c94-11ef-b37f-8b9941235217"
+					],
+					"query": [
+						{
+							"key": "_where",
+							"value": "Domain=\"VTEX Domain\"",
+							"disabled": true
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Document",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJFUzI1NiIsImtpZCI6IkJGRkIzRTYwQjY5NTIzRTk0QUJDRjlBNjk1QzkzNzhDOUI3NTQ3QkIiLCJ0eXAiOiJqd3QifQ.eyJzdWIiOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwiYWNjb3VudCI6InZ0ZXhpb3NwcnVlYmEyMDIyIiwiYXVkaWVuY2UiOiJhZG1pbiIsInNlc3MiOiIxOTY0Y2Y3Yy1lYjM3LTQyYTEtYTlmMS0xNjMwMmI1OTliYzQiLCJleHAiOjE3MjkxNzAzNzksInR5cGUiOiJ1c2VyIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1IiwiaWF0IjoxNzI5MDgzOTc5LCJpc1JlcHJlc2VudGF0aXZlIjpmYWxzZSwiaXNzIjoidG9rZW4tZW1pdHRlciIsImp0aSI6ImQwYzc1MTNlLTJjZTAtNDhlNy1hYjlmLTFlMmM3YjkyNzE3NyJ9.zrSStkJ5B5c6Q7dZTwfqhira9suR_EWB-02ASjQ_blwDqQhsTDBg7wJT-L4PEvcgYJtgyKTUBg0X0gAGnJ-xlg",
+						"disabled": true
+					},
+					{
+						"key": "REST-Content-Range",
+						"value": "100",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Domain\":\"VTEX account\", \r\n    \"OrderId\":\"2342342342-01\",  \r\n    \"State\":\"invoiced\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.myvtex.com/api/dataentities/hook_events/documents?_where=State=\"invoiced\"&_schema=hook_events_schema_v1",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"myvtex",
+						"com"
+					],
+					"path": [
+						"api",
+						"dataentities",
+						"hook_events",
+						"documents"
+					],
+					"query": [
+						{
+							"key": "_where",
+							"value": "State=\"invoiced\""
+						},
+						{
+							"key": "_sort",
+							"value": "Domain ASC",
+							"disabled": true
+						},
+						{
+							"key": "_schema",
+							"value": "hook_events_schema_v1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST New GiftCard",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.vtex.ds.v10+json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkVFQkFGRjY1QkVFRUNDODUxQkQ2NkFEOEI0NjIyQUY2MDAzOEI5NUQiLCJ0eXAiOiJKV1QifQ.eyJhY2NvdW50IjoidnRleGlvc3BydWViYTIwMjIiLCJ3b3Jrc3BhY2UiOiJhdmVyYSIsInN1YiI6InZ0ZXhpb3NwcnVlYmEyMDIyLmhvb2stc2VydmljZXMtbGlzdGVuQDAuMC4wIiwidHlwZSI6ImxpbmsiLCJ1c2VyTG9naW4iOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1Iiwicm9sZXMiOlsibGluazp2dGV4aW9zcHJ1ZWJhMjAyMi5ob29rLXNlcnZpY2VzLWxpc3RlbkAwLjAuMCJdLCJuYmYiOjE3Mjk4NjYyMDAsImV4cCI6MTcyOTk1MjYwMCwiaWF0IjoxNzI5ODY2MjAwLCJpc3MiOiJ2dGV4aW8vcm91dGVyIiwiYXVkIjoidnRleGlvIn0.cxq2nLzWJEfZ6sOIM6yRsx4hnQAy4RKPkGPtdOBinI24s05ln5-h18wuq0TbFgP0kUHv3uYq5qqEvQ7tqLWuANethmkbehkakW9zFpdNZKhRSQWzbYRLepNOHnMVsw0NMi0tbKfZC9GyLko8pFlKIFLzREjhVVqpkmhngAqwzaxfu1Cj8g5tISyjJjhcQDOF9AoXsrkOafRViXpa8DQHiMO9j4D5az9WuVz3XIORZYTvaTnQfrwvWEYT18hJWk-cbmGDYMaYoVCcQz6MZ8PH4B_tUcj4mbfUW57HCpt6htEvBa1O9N1K-Z5M6xmUAE4_mKK1bfCn3kFD_TcojFCHNQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"relationName\": \"GiftCard from Store\",\r\n  \"expiringDate\": \"2024-12-30T13:15:30Z\",\r\n  \"caption\": \"Giftcard to Client\",\r\n  \"profileId\": \"4a2d6334-a4f1-4ead-884d-cba31c83b8d5\",\r\n  \"currencyCode\": \"COP\",\r\n  \"restrictedToOwner\": false,\r\n  \"multipleCredits\": true,\r\n  \"multipleRedemptions\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://vtexiosprueba2022.vtexcommercestable.com.br/api/giftcards",
+					"protocol": "http",
+					"host": [
+						"vtexiosprueba2022",
+						"vtexcommercestable",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"giftcards"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST New Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/vnd.vtex.ds.v10+json"
+					},
+					{
+						"key": "X-VTEX-API-AppKey",
+						"value": "vtexappkey-vtexiosprueba2022-WDRTGP"
+					},
+					{
+						"key": "X-VTEX-API-AppToken",
+						"value": "TUUQOVIOKMIYKGVAHTDKELZLLIJRWDRGJCWZMWITNOHSVPAUCSVYHQVELPJHWHKAQGBOSNENPDLGTEYQETVUJLJWPWBHUJJYSSBXZQSYVYAZWBQXWFIJPQKTZWCLPYVO"
+					},
+					{
+						"key": "VtexIdclientAutCookie",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkVFQkFGRjY1QkVFRUNDODUxQkQ2NkFEOEI0NjIyQUY2MDAzOEI5NUQiLCJ0eXAiOiJKV1QifQ.eyJhY2NvdW50IjoidnRleGlvc3BydWViYTIwMjIiLCJ3b3Jrc3BhY2UiOiJhdmVyYSIsInN1YiI6InZ0ZXhpb3NwcnVlYmEyMDIyLmhvb2stc2VydmljZXMtbGlzdGVuQDAuMC4wIiwidHlwZSI6ImxpbmsiLCJ1c2VyTG9naW4iOiJhbGVqYW5kcm92ZXJhY2FycmFzcXVpbGxhMDFAZ21haWwuY29tIiwidXNlcklkIjoiNGEyZDYzMzQtYTRmMS00ZWFkLTg4NGQtY2JhMzFjODNiOGQ1Iiwicm9sZXMiOlsibGluazp2dGV4aW9zcHJ1ZWJhMjAyMi5ob29rLXNlcnZpY2VzLWxpc3RlbkAwLjAuMCJdLCJuYmYiOjE3Mjk4NjYyMDAsImV4cCI6MTcyOTk1MjYwMCwiaWF0IjoxNzI5ODY2MjAwLCJpc3MiOiJ2dGV4aW8vcm91dGVyIiwiYXVkIjoidnRleGlvIn0.cxq2nLzWJEfZ6sOIM6yRsx4hnQAy4RKPkGPtdOBinI24s05ln5-h18wuq0TbFgP0kUHv3uYq5qqEvQ7tqLWuANethmkbehkakW9zFpdNZKhRSQWzbYRLepNOHnMVsw0NMi0tbKfZC9GyLko8pFlKIFLzREjhVVqpkmhngAqwzaxfu1Cj8g5tISyjJjhcQDOF9AoXsrkOafRViXpa8DQHiMO9j4D5az9WuVz3XIORZYTvaTnQfrwvWEYT18hJWk-cbmGDYMaYoVCcQz6MZ8PH4B_tUcj4mbfUW57HCpt6htEvBa1O9N1K-Z5M6xmUAE4_mKK1bfCn3kFD_TcojFCHNQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountName\": \"vtexiosprueba2022\",\r\n    \"serviceType\": 0,\r\n    \"templateName\": \"giftcard-notification\",\r\n    \"jsonData\": {\r\n        \"email\": \"alejandroveracarrasquilla01@gmail.com\",\r\n        \"value\": 50000,\r\n        \"description\": \"New Transaction\",\r\n        \"requestId\": \"12345678910\",\r\n        \"redemptionCode\": \"GIT 66\",\r\n        \"redemptionToken\": \"GIT 66\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vtexiosprueba2022.vtexcommercestable.com.br/api/mail-service/pvt/sendmail",
+					"protocol": "https",
+					"host": [
+						"vtexiosprueba2022",
+						"vtexcommercestable",
+						"com",
+						"br"
+					],
+					"path": [
+						"api",
+						"mail-service",
+						"pvt",
+						"sendmail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

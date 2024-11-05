@@ -1,0 +1,11 @@
+input Event {
+    Domain:String
+    OrderId:String
+    State:String
+}
+
+type EventResponse {
+    Id: String
+    Href: String
+    DocumentId: String
+}

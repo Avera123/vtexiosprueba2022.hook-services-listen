@@ -67,6 +67,16 @@
         "host": "api.vtex.com",
         "path": "/*"
       }
+    },
+    {
+      "name": "send-message"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "{{account}}.vtexcommercestable.com.br",
+        "path": "/api/mail-service/pvt/sendmail"
+      }
     }
   ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"

@@ -1,9 +1,11 @@
 
 const routes = {
-    baseUrl: (account: string) => `http://${account}.vtexcommercestable.com.br/api`,
+    baseUrl: (account: string) => `https://${account}.vtexcommercestable.com.br/api`,
     orderAPIBaseUrl: (account: string, orderId: string) => `${routes.baseUrl(account)}/oms/pvt/orders/${orderId}`,
     giftCardAPIBaseUrl: (account: string) => `${routes.baseUrl(account)}/giftcards`,
-    giftCardTransactionAPIBaseUrl: (account: string, giftCardId: string) => `${routes.giftCardAPIBaseUrl(account)}/${giftCardId}/transactions`
+    giftCardTransactionAPIBaseUrl: (account: string, giftCardId: string) => `${routes.giftCardAPIBaseUrl(account)}/${giftCardId}/transactions`,
+    sendNotificationMessageCenter: (account: string) => `${routes.baseUrl(account)}/mail-service/pvt/sendmail`,
+    baseUrlEventsEntity: (account: string, schema: string) => `${routes.baseUrl(account)}/dataentities/hook_events/documents?_schema=${schema}`,
 }
 
 const defaultHeaders = (authToken: string) => ({
@@ -44,7 +46,8 @@ export const resolvers = {
             const { data } = await hub.get(routes.orderAPIBaseUrl(account, params.orderId), headers)
 
             return data
-        }
+        },
+        // getEventsBySearch
     },
     Mutation: {
         postNewGiftCard: async (_: any, params: any, ctx: any) => {
@@ -70,7 +73,7 @@ export const resolvers = {
                 "multipleRedemptions": true
             })
 
-            const {data: newTransactionData} = await resolvers.Mutation.postNewTransactionGiftCard(null,{
+            const { data: newTransactionData } = await resolvers.Mutation.postNewTransactionGiftCard(null, {
                 "operation": "Credit",
                 "value": params?.value,
                 "description": "New Transaction",
@@ -103,9 +106,49 @@ export const resolvers = {
                 "redemptionToken": params.redemptionToken,
             })
 
+            // const dataMessageToSend = {
+            //     "accountName": "vtexiosprueba2022",
+            //     "serviceType": 0,
+            //     "templateName": "giftcard-notification",
+            //     "jsonData": {
+            //         "email": "alejandroveracarrasquilla01@gmail.com",
+            //         "value": params.value,
+            //         "description": "New Transaction",
+            //         "requestId": "12345678910",
+            //         "redemptionCode": params.redemptionCode,
+            //         "redemptionToken": params.redemptionToken,
+            //     }
+            // }
+
+            // const messageRequest = await hub.post(routes.sendNotificationMessageCenter(account), dataMessageToSend, headers)
+
             console.log({ data })
 
             return data
-        }
+        },
+        postNewEvent: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            // console.log({params})
+
+            const { data } = await hub.post(routes.baseUrlEventsEntity(account, "hook_events_schema_v1"), headers, {
+                "Domain":params.Domain, 
+                "OrderId":params.OrderId, 
+                "State":params.State, 
+            })
+
+            console.log({ data })
+
+            return data
+        },
+        // deleteNewEvent
+        // putEvent
     }
 }

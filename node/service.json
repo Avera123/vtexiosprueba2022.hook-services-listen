@@ -6,12 +6,16 @@
   "maxReplicas": 4,
   "workers": 1,
   "routes": {
-    "status": {
-      "path": "/_v/status/:code",
+    "validateuser": {
+      "path": "/_v/validateuser",
       "public": true
     },
     "hooklistener": {
       "path": "/_v/hooklistener",
+      "public": true
+    },
+    "giftcardphisicalcreate": {
+      "path": "/_v/giftcardphisicalcreate",
       "public": true
     }
   }

@@ -72,6 +72,12 @@
       "name": "send-message"
     },
     {
+      "name": "template-criar"
+    },
+    {
+      "name": "template-editar"
+    },
+    {
       "name": "outbound-access",
       "attrs": {
         "host": "{{account}}.vtexcommercestable.com.br",

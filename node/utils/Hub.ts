@@ -10,7 +10,7 @@ export default class RequestHub extends ExternalClient {
     }
 
     public authToken() {
-        return this.context.authToken
+        return this.context.adminUserAuthToken
     }
 
     public account(){

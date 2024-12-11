@@ -1,0 +1,16 @@
+input UserProfile {
+    email: String
+}
+
+type UserProfileResponse {
+    id: String
+    userId: String
+    firstName: String
+    email: String
+}
+
+type UserProfileCreatedResponse {
+    Id: String
+    Href: String
+    DocumentId: String
+}

@@ -1,9 +1,14 @@
 type Query {
     getOrderDetails(orderId: String): OrderResponse @cacheControl(scope:PRIVATE)
+    getUserByEmail(email: String): UserProfileResponse @cacheControl(scope:PRIVATE)
+    getUserById(id: String): UserProfileResponse @cacheControl(scope:PRIVATE)
+    generateUserId(email: String): String @cacheControl(scope:PRIVATE)
 }
 
 type Mutation {
     postNewGiftCard(dataForGiftCard: GiftCard): GiftCardResponse @cacheControl(scope:PRIVATE)
     postNewTransactionGiftCard(dataForGiftCardTransaction: GiftCardTransaction): GiftCardTransactionResponse @cacheControl(scope:PRIVATE)
     postNewEvent(dataForEvent: Event): EventResponse @cacheControl(scope:PRIVATE)
+    postNewUser(dataForUser: UserProfile): UserProfileCreatedResponse @cacheControl(scope:PRIVATE)
+    postUserIdUser(id: String): String @cacheControl(scope:PRIVATE)
 }

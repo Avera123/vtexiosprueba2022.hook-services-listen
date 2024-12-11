@@ -1,8 +1,13 @@
+import { v5 as uuidv5 } from 'uuid';
+
+const MY_NAMESPACE = 'f83d8282-2924-4a94-b93d-14910fbfbd8d'
 
 const routes = {
     baseUrl: (account: string) => `https://${account}.vtexcommercestable.com.br/api`,
     orderAPIBaseUrl: (account: string, orderId: string) => `${routes.baseUrl(account)}/oms/pvt/orders/${orderId}`,
     giftCardAPIBaseUrl: (account: string) => `${routes.baseUrl(account)}/giftcards`,
+    clientEntityBaseUrl: (account: string) => `${routes.baseUrl(account)}/dataentities/CL`,
+    checkoutProfileUser: (account: string, email: string) => `${routes.baseUrl(account)}/checkout/pub/profiles?email=${email}`,
     giftCardTransactionAPIBaseUrl: (account: string, giftCardId: string) => `${routes.giftCardAPIBaseUrl(account)}/${giftCardId}/transactions`,
     sendNotificationMessageCenter: (account: string) => `${routes.baseUrl(account)}/mail-service/pvt/sendmail`,
     baseUrlEventsEntity: (account: string, schema: string) => `${routes.baseUrl(account)}/dataentities/hook_events/documents?_schema=${schema}`,
@@ -47,7 +52,50 @@ export const resolvers = {
 
             return data
         },
-        // getEventsBySearch
+        getUserByEmail: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account, authToken } = ioContext
+
+            const headers = defaultHeaders(authToken)
+
+            const { data } = await hub.get(`${routes.clientEntityBaseUrl(account)}/search?email=${params}&_fields=_all`, headers)
+
+            console.log({ data })
+
+            return data
+        },
+        getUserById: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account, authToken } = ioContext
+
+            const headers = defaultHeaders(authToken)
+
+            const { data } = await hub.get(`${routes.clientEntityBaseUrl(account)}/documents/${params}?_fields=_all`, headers)
+
+            return data
+        },
+        generateUserId: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account, authToken } = ioContext
+
+            const headers = defaultHeaders(authToken)
+
+            const { data } = await hub.get(routes.checkoutProfileUser(account, params), headers)
+
+            return data
+        },
     },
     Mutation: {
         postNewGiftCard: async (_: any, params: any, ctx: any) => {
@@ -60,28 +108,48 @@ export const resolvers = {
 
             const headers = defaultHeadersGiftCards()
 
-            // console.log({params})
+            // console.log({ params })
 
             const { data } = await hub.post(routes.giftCardAPIBaseUrl(account), headers, {
-                "relationName": "GiftCard from Store 1",
+                "relationName": `GiftCard from Store ${new Date().getTime()}`,
                 "expiringDate": "2024-12-30T13:15:30Z",
-                "caption": "Giftcard to Client",
+                "caption": `Giftcard to Client ${uuidv5(`${new Date().getTime()}`, MY_NAMESPACE)}`,
                 "profileId": params?.userProfileId,
                 "currencyCode": "COP",
-                "restrictedToOwner": false,
-                "multipleCredits": false,
-                "multipleRedemptions": true
+                "restrictedToOwner": params.restrictedToOwner,
+                "multipleCredits": params.multipleCredits,
+                "multipleRedemptions": params.multipleRedemptions
             })
 
             const { data: newTransactionData } = await resolvers.Mutation.postNewTransactionGiftCard(null, {
                 "operation": "Credit",
                 "value": params?.value,
                 "description": "New Transaction",
-                "requestId": "98765432",
                 "redemptionCode": data?.redemptionCode,
                 "redemptionToken": data?.redemptionToken,
                 "idGiftCard": data?.id,
+                "profileId": params?.userProfileId,
             }, ctx)
+
+            
+            const dataMessageToSend = {
+                "accountName": "vtexiosprueba2022",
+                "serviceType": 0,
+                "templateName": "giftcard-notification",
+                "jsonData": {
+                    "email": "*testmail@gmail.com",
+                    "value": params.value,
+                    "description": "New Transaction",
+                    "requestId": "12345678910",
+                    "redemptionCode": params.redemptionCode,
+                    "redemptionToken": params.redemptionToken,
+                    "data": data
+                }
+            }
+
+            const messageRequest = await hub.post(routes.sendNotificationMessageCenter(account), dataMessageToSend, headers)
+
+            console.log({ messageRequest })
 
             console.log({ data, newTransactionData })
 
@@ -100,27 +168,11 @@ export const resolvers = {
             const { data } = await hub.post(routes.giftCardTransactionAPIBaseUrl(account, params.idGiftCard), headers, {
                 "operation": "Credit",
                 "value": params.value,
-                "description": "New Transaction",
-                "requestId": "12345678910",
+                "description": "Nueva recarga para generación de GiftCard",
+                "requestId": `${uuidv5(`${new Date().getTime()}`, MY_NAMESPACE)}`,
                 "redemptionCode": params.redemptionCode,
                 "redemptionToken": params.redemptionToken,
             })
-
-            // const dataMessageToSend = {
-            //     "accountName": "vtexiosprueba2022",
-            //     "serviceType": 0,
-            //     "templateName": "giftcard-notification",
-            //     "jsonData": {
-            //         "email": "alejandroveracarrasquilla01@gmail.com",
-            //         "value": params.value,
-            //         "description": "New Transaction",
-            //         "requestId": "12345678910",
-            //         "redemptionCode": params.redemptionCode,
-            //         "redemptionToken": params.redemptionToken,
-            //     }
-            // }
-
-            // const messageRequest = await hub.post(routes.sendNotificationMessageCenter(account), dataMessageToSend, headers)
 
             console.log({ data })
 
@@ -139,16 +191,56 @@ export const resolvers = {
             // console.log({params})
 
             const { data } = await hub.post(routes.baseUrlEventsEntity(account, "hook_events_schema_v1"), headers, {
-                "Domain":params.Domain, 
-                "OrderId":params.OrderId, 
-                "State":params.State, 
+                "Domain": params.Domain,
+                "OrderId": params.OrderId,
+                "State": params.State,
             })
 
             console.log({ data })
 
             return data
         },
-        // deleteNewEvent
-        // putEvent
+        postNewUser: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            const { data } = await hub.post(`${routes.clientEntityBaseUrl(account)}/documents`, headers, {
+                "email": params.email,
+                "document": params.document,
+                "documentType": "cedulaCOL",
+                "firstName": params.name,
+                "lastName": params.lastName
+            })
+
+            await resolvers.Query.generateUserId(null, params, ctx)
+
+            return data
+        },
+        postUserIdUser: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            // console.log({params})
+
+            const { data } = await hub.patch(`${routes.clientEntityBaseUrl(account)}/documents/${params}`, headers, {
+                "userId": params
+            })
+
+            console.log({ data })
+
+            return data
+        },
     }
 }

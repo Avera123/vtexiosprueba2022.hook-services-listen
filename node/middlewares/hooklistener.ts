@@ -33,6 +33,9 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
     "userProfileId": orderDetails?.clientProfileData?.userProfileId ?? "",
   }
 
+  //Filtramos los productos
+  // const items = order.items.filter((item) => item.additionalInfo.categories[0].id === 50)
+
   const createdNewGiftCard = await resolvers.Mutation.postNewGiftCard(null, dataForGiftCard, ctx)
 
   const createNewEvent = await resolvers.Mutation.postNewEvent(null, {

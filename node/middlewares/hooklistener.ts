@@ -12,8 +12,8 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
 
   ctx.status = 200
   ctx.body = {
-    "message": "OK"
-  }
+    "hookConfig": "ping"
+}
 
   // console.log(body.State)
 

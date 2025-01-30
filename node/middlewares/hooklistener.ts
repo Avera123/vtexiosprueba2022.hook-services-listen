@@ -8,6 +8,11 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
 
   const body = await json(req)
 
+  if(body.hookConfig){
+    ctx.status = 200
+    return
+  }
+
   console.info({ body })
 
   console.log(body.State)

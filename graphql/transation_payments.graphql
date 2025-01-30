@@ -1,0 +1,8 @@
+input PaymentTransaction {
+    orderId: String
+    paymentId: String
+}
+
+type PaymentTransactionResponse {
+    id: String
+}

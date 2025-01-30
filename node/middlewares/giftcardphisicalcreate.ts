@@ -7,38 +7,61 @@ export async function giftcardphisicalcreate(ctx: Context, next: () => Promise<a
     req,
   } = ctx
 
+  // const secure_code = String(req.headers['fds-secure-code'])
+
+  // if (secure_code !== '6ee1c07b-a3f5-4941-b9d9-80dc55a76dbe') {
+  //   ctx.status = 403
+  //   ctx.body = {
+  //     "message": `No tienes permiso para acceder a este recurso.`
+  //   }
+
+  //   return await next()
+  // }
+
+
   const body = await json(req)
-  // console.info({ body })
+  console.info({ body })
 
   const userProfile = await resolvers.Query.getUserByEmail(null, body.email, ctx)
 
+  console.log({ userProfile })
+
   const dataForGiftCard = {
     "quantity": 1,
-    "value": body?.amount ?? 50000,
+    "value": body?.amount ?? 0,
     "userProfileId": userProfile[0].userId ?? "",
     "restrictedToOwner": body.restrictedToOwner,
     "multipleCredits": body.multipleCredits,
-    "multipleRedemptions": body.multipleRedemptions
+    "multipleRedemptions": body.multipleRedemptions,
+    "expiringDate": body.expiringDate
   }
 
   const createdNewGiftCard = await resolvers.Mutation.postNewGiftCard(null, dataForGiftCard, ctx)
 
-  console.log({createdNewGiftCard})
+  console.log({ createdNewGiftCard })
 
-  // const createNewEvent = await resolvers.Mutation.postNewEvent(null, {
-  //   "Domain": body.Domain,
-  //   "OrderId": body.OrderId,
-  //   "State": body.State,
-  // }, ctx)
+  const createNewGiftCardMD = await resolvers.Mutation.postNewGiftCardMD(null, {
+    "email": body.email,
+    "order": "DEFAULT",
+    "userId": userProfile[0].userId ?? 'DEFAULT',
+    "firstName": body.name,
+    "lastName": body.lastName,
+    "document": body.document,
+    "idCustomer": userProfile[0].id ?? 'DEFAULT' ,
+    "idGiftCard": createdNewGiftCard.id,
+    "redemptionCode": createdNewGiftCard.redemptionCode,
+    "amount": body.amount
+  }, ctx)
 
-  // console.log({ createdNewGiftCard, createNewEvent })
+  console.log({ createNewGiftCardMD })
 
   ctx.status = 200
   ctx.body = {
     "message": "OK",
     "initialData": body,
     "userProfile": userProfile,
-    "createdNewGiftCard": createdNewGiftCard
+    "createdNewGiftCard": createdNewGiftCard,
+    "createNewGiftCardMD": createNewGiftCardMD
   }
 
   await next()

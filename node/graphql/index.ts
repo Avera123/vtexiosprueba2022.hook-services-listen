@@ -10,7 +10,10 @@ const routes = {
     checkoutProfileUser: (account: string, email: string) => `${routes.baseUrl(account)}/checkout/pub/profiles?email=${email}`,
     giftCardTransactionAPIBaseUrl: (account: string, giftCardId: string) => `${routes.giftCardAPIBaseUrl(account)}/${giftCardId}/transactions`,
     sendNotificationMessageCenter: (account: string) => `${routes.baseUrl(account)}/mail-service/pvt/sendmail`,
-    baseUrlEventsEntity: (account: string, schema: string) => `${routes.baseUrl(account)}/dataentities/hook_events/documents?_schema=${schema}`,
+    baseUrlGiftCardSimpleEntity: (account: string, schema: string, id: string) => `${routes.baseUrl(account)}/dataentities/giftcards_fds/documents/${id}?_schema=${schema}`,
+    baseUrlEventsEntity: (account: string, schema: string) => `${routes.baseUrl(account)}/dataentities/giftcards_fds/documents?_schema=${schema}`,
+    baseUrlGiftCardEntity: (account: string, schema: string, code: string) => `${routes.baseUrl(account)}/dataentities/giftcards_fds/search?_fields=_all&_where=redemptionCode="${code}"&_schema=${schema}`,
+    transactionNofity: (account: string, orderId: string,paymentId:string) => `${routes.baseUrl(account)}/oms/pvt/orders/${orderId}/payments/${paymentId}/payment-notification`,
 }
 
 const defaultHeaders = (authToken: string) => ({
@@ -96,6 +99,36 @@ export const resolvers = {
 
             return data
         },
+        getGiftCardById: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            const { data } = await hub.get(`${routes.giftCardAPIBaseUrl(account)}/${params}`, headers)
+
+            return data
+        },
+        getGiftCardByCode: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            const { data } = await hub.get(`${routes.baseUrlGiftCardEntity(account, "giftcards_fds_v1", params)}`, headers)
+
+            console.log({ data })
+
+            return data
+        },
     },
     Mutation: {
         postNewGiftCard: async (_: any, params: any, ctx: any) => {
@@ -112,7 +145,7 @@ export const resolvers = {
 
             const { data } = await hub.post(routes.giftCardAPIBaseUrl(account), headers, {
                 "relationName": `GiftCard from Store ${new Date().getTime()}`,
-                "expiringDate": "2024-12-30T13:15:30Z",
+                "expiringDate": params.expiringDate,
                 "caption": `Giftcard to Client ${uuidv5(`${new Date().getTime()}`, MY_NAMESPACE)}`,
                 "profileId": params?.userProfileId,
                 "currencyCode": "COP",
@@ -123,33 +156,13 @@ export const resolvers = {
 
             const { data: newTransactionData } = await resolvers.Mutation.postNewTransactionGiftCard(null, {
                 "operation": "Credit",
-                "value": params?.value,
+                "value": Number(params?.value),
                 "description": "New Transaction",
                 "redemptionCode": data?.redemptionCode,
                 "redemptionToken": data?.redemptionToken,
                 "idGiftCard": data?.id,
                 "profileId": params?.userProfileId,
             }, ctx)
-
-            
-            const dataMessageToSend = {
-                "accountName": "vtexiosprueba2022",
-                "serviceType": 0,
-                "templateName": "giftcard-notification",
-                "jsonData": {
-                    "email": "*testmail@gmail.com",
-                    "value": params.value,
-                    "description": "New Transaction",
-                    "requestId": "12345678910",
-                    "redemptionCode": params.redemptionCode,
-                    "redemptionToken": params.redemptionToken,
-                    "data": data
-                }
-            }
-
-            const messageRequest = await hub.post(routes.sendNotificationMessageCenter(account), dataMessageToSend, headers)
-
-            console.log({ messageRequest })
 
             console.log({ data, newTransactionData })
 
@@ -166,8 +179,8 @@ export const resolvers = {
             const headers = defaultHeadersGiftCards()
 
             const { data } = await hub.post(routes.giftCardTransactionAPIBaseUrl(account, params.idGiftCard), headers, {
-                "operation": "Credit",
-                "value": params.value,
+                "operation": params.operation,
+                "value": Number(params.value),
                 "description": "Nueva recarga para generación de GiftCard",
                 "requestId": `${uuidv5(`${new Date().getTime()}`, MY_NAMESPACE)}`,
                 "redemptionCode": params.redemptionCode,
@@ -194,6 +207,64 @@ export const resolvers = {
                 "Domain": params.Domain,
                 "OrderId": params.OrderId,
                 "State": params.State,
+            })
+
+            console.log({ data })
+
+            return data
+        },
+        postNewGiftCardMD: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            console.log({ params })
+
+            const { data } = await hub.post(routes.baseUrlEventsEntity(account, "giftcards_fds_v1"), headers, {
+                "email": params.email ?? "DEFAULT",
+                "order": params.order ?? "DEFAULT",
+                "userId": params.userId ?? "DEFAULT",
+                "firstName": params.firstName ?? "DEFAULT",
+                "lastName": params.lastName ?? "DEFAULT",
+                "document": params.document ?? "DEFAULT",
+                "idCustomer": params.idCustomer ?? "DEFAULT",
+                "idGiftCard": params.idGiftCard ?? "DEFAULT",
+                "redemptionCode": params.redemptionCode ?? "DEFAULT",
+                "amount": Number(params.amount) || 0
+            })
+
+            console.log({ data })
+
+            return data
+        },
+        patchNewGiftCardAmountMD: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            console.log({ params })
+
+            const { data } = await hub.patch(routes.baseUrlGiftCardSimpleEntity(account, "giftcards_fds_v1", params.id), headers, {
+                "amount": Number(params.amount) || 0,
+                "order": params.order,
+                "email": params.email,
+                "userId": params.userId,
+                "firstName": params.firstName,
+                "lastName": params.lastName,
+                "document": params.document,
+                "idCustomer": params.idCustomer,
+                "idGiftCard": params.idGiftCard,
+                "redemptionCode": params.redemptionCode,
             })
 
             console.log({ data })
@@ -239,6 +310,20 @@ export const resolvers = {
             })
 
             console.log({ data })
+
+            return data
+        },
+        transactionNofityPayment: async (_: any, params: any, ctx: any) => {
+            const {
+                vtex: ioContext,
+                clients: { hub },
+            } = ctx
+
+            const { account } = ioContext
+
+            const headers = defaultHeadersGiftCards()
+
+            const { data } = await hub.post(`${routes.transactionNofity(account, params.orderId, params.paymentId)}`, headers)
 
             return data
         },

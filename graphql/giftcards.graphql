@@ -15,3 +15,39 @@ type GiftCardResponse {
     caption: String
     currencyCode: String
 }
+
+input GiftCardMD{
+    email: String
+    order: String
+    userId: String
+    firstName: String
+    lastName: String
+    document: String
+    idCustomer: String
+    idGiftCard: String
+    redemptionCode: String
+    amount: String
+}
+
+input GiftCardPatchAmountMD{
+    id: String
+    amount: String
+}
+
+type GiftCardMDResponse{
+    Id: String
+}
+
+type GiftCardMDGetResponse{
+    id: String
+    email: String
+    order: String
+    userId: String
+    firstName: String
+    lastName: String
+    document: String
+    idCustomer: String
+    idGiftCard: String
+    redemptionCode: String
+    amount: String
+}

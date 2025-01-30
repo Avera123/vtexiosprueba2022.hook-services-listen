@@ -3,6 +3,8 @@ type Query {
     getUserByEmail(email: String): UserProfileResponse @cacheControl(scope:PRIVATE)
     getUserById(id: String): UserProfileResponse @cacheControl(scope:PRIVATE)
     generateUserId(email: String): String @cacheControl(scope:PRIVATE)
+    getGiftCardById(id: String): GiftCardResponse @cacheControl(scope:PRIVATE)
+    getGiftCardByCode(id: String): GiftCardMDGetResponse @cacheControl(scope:PRIVATE)
 }
 
 type Mutation {
@@ -11,4 +13,7 @@ type Mutation {
     postNewEvent(dataForEvent: Event): EventResponse @cacheControl(scope:PRIVATE)
     postNewUser(dataForUser: UserProfile): UserProfileCreatedResponse @cacheControl(scope:PRIVATE)
     postUserIdUser(id: String): String @cacheControl(scope:PRIVATE)
+    postNewGiftCardMD(dataForGiftCard: GiftCardMD): GiftCardMDResponse @cacheControl(scope:PRIVATE)
+    patchNewGiftCardAmountMD(dataForGiftCard: GiftCardPatchAmountMD): GiftCardMDResponse @cacheControl(scope:PRIVATE)
+    transactionNofityPayment(dataForPayment: PaymentTransaction): String @cacheControl(scope:PRIVATE)
 }

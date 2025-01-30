@@ -1,10 +1,10 @@
 {
   "memory": 256,
-  "ttl": 10,
-  "timeout": 2,
+  "ttl": 3600,
+  "timeout": 90,
   "minReplicas": 2,
   "maxReplicas": 4,
-  "workers": 1,
+  "workers": 3,
   "routes": {
     "validateuser": {
       "path": "/_v/validateuser",
@@ -16,6 +16,18 @@
     },
     "giftcardphisicalcreate": {
       "path": "/_v/giftcardphisicalcreate",
+      "public": true
+    },
+    "giftcardphisicaltransaction": {
+      "path": "/_v/giftcardphisicaltransaction",
+      "public": true
+    },
+    "giftcardphisicalgetbyid": {
+      "path": "/_v/giftcardphisicalgetbyid",
+      "public": true
+    },
+    "giftcardphisicalgetbycode": {
+      "path": "/_v/giftcardphisicalgetbycode",
       "public": true
     }
   }

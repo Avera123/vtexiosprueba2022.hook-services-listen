@@ -5,6 +5,9 @@ import { Clients } from './clients'
 import { hooklistener } from './middlewares/hooklistener'
 import { validateuser } from './middlewares/validateuser'
 import { giftcardphisicalcreate } from './middlewares/giftcardphisicalcreate'
+import { giftcardphisicaltransaction } from './middlewares/giftcardphisicaltransaction'
+import {giftcardphisicalgetbyid} from './middlewares/giftcardphisicalgetbyid'
+import {giftcardphisicalgetbycode} from './middlewares/giftcardphisicalgetbycode'
 
 import { resolvers } from './graphql'
 
@@ -59,6 +62,15 @@ export default new Service({
     }),
     giftcardphisicalcreate: method({
       POST: [giftcardphisicalcreate],
+    }),
+    giftcardphisicaltransaction: method({
+      POST: [giftcardphisicaltransaction],
+    }),
+    giftcardphisicalgetbyid: method({
+      POST: [giftcardphisicalgetbyid],
+    }),
+    giftcardphisicalgetbycode: method({
+      POST: [giftcardphisicalgetbycode],
     }),
   },
 })

@@ -60,6 +60,9 @@ export async function giftcardphisicaltransaction(ctx: Context, next: () => Prom
       "idCustomer": getGiftCardMDByCode[0].idCustomer,
       "idGiftCard": getGiftCardMDByCode[0].idGiftCard,
       "redemptionCode": getGiftCardMDByCode[0].redemptionCode,
+      "amount_formatted":getGiftCardMDByCode[0].amount_formatted || " ",
+      "store":getGiftCardMDByCode[0].store || " ",
+      "seller":getGiftCardMDByCode[0].seller || " "
     }, ctx)
 
     console.log({ updatedGiftCard })

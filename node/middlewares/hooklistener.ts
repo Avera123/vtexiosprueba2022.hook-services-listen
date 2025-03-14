@@ -1,5 +1,6 @@
 import { json } from "co-body"
 import { resolvers } from '../graphql'
+import bwipjs from 'bwip-js'
 
 export async function hooklistener(ctx: Context, next: () => Promise<any>) {
   const {
@@ -9,6 +10,39 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
   const body = await json(req)
 
   console.info({ body })
+
+  const svg = bwipjs.toSVG({
+    bcid: 'code128',       // Barcode type
+    text: 'FCHQ-UHVK-HDYJ-MBCL',    // Text to encode
+    height: 12,              // Bar height, in millimeters
+    includetext: false,            // Show human-readable text
+    textxalign: 'center',        // Always good to set this
+    textcolor: 'ff0000',        // Red text
+  });
+
+  console.log(svg)
+
+  // const buf:any = await new Promise((resolve, reject) => {
+  //   bwipjs.toBuffer({
+  //     bcid: 'code128',       // Tipo de código de barras
+  //     text: 'FCHQ-UHVK-HDYJ-MBCL',    // Texto a codificar
+  //     scale: 3,               // Factor de escala 3x
+  //     height: 10,             // Altura de las barras en milímetros
+  //     includetext: true,      // Incluir texto legible
+  //     textxalign: 'center',   // Alineación del texto
+  //   }, function (err, png) {
+  //     if (err) {
+  //       reject(err); // Si hay un error, rechaza la Promise
+  //     } else {
+  //       resolve(png); // Si todo va bien, resuelve la Promise con el buffer
+  //     }
+  //   });
+  // });
+
+  // // var atob = require('atob');
+  // console.log(String(buf))
+
+  // return
 
   // ctx.status = 200
   // ctx.body = {
@@ -84,7 +118,7 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
     console.log({ giftcard })
 
     for (let index = 1; index <= giftcard.quantity; index++) {
-      setTimeout(async() => {
+      setTimeout(async () => {
         const createdNewGiftCard = await resolvers.Mutation.postNewGiftCard(null, dataForGiftCard, ctx)
 
         console.log({ createdNewGiftCard })
@@ -100,6 +134,9 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
           "idGiftCard": createdNewGiftCard.id,
           "redemptionCode": createdNewGiftCard.redemptionCode,
           "amount": Number(orderDetails?.items[0].sellingPrice / 100) ?? 0,
+          "amount_formatted": String(Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", minimumFractionDigits: 0}).format(Number(orderDetails?.items[0].sellingPrice / 100) ?? 0)),
+          "store": "Venta Online",
+          "seller": "Ecommerce"
         }, ctx)
 
         giftCardsResult.push(createdNewGiftCard)
@@ -133,6 +170,9 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
         "idCustomer": getGiftCardMDByCode[0].idCustomer,
         "idGiftCard": getGiftCardMDByCode[0].idGiftCard,
         "redemptionCode": getGiftCardMDByCode[0].redemptionCode,
+        "amount_formatted": String(Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", minimumFractionDigits: 0}).format(Number(giftCard.balance) ?? 0)),
+        "store": "Venta Online",
+        "seller": "Ecommerce"
       }, ctx)
 
       console.log({ updatedGiftCard })

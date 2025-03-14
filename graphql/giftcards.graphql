@@ -27,6 +27,9 @@ input GiftCardMD{
     idGiftCard: String
     redemptionCode: String
     amount: String
+    amount_formatted: String
+    store: String
+    seller: String
 }
 
 input GiftCardPatchAmountMD{
@@ -50,4 +53,7 @@ type GiftCardMDGetResponse{
     idGiftCard: String
     redemptionCode: String
     amount: String
+    amount_formatted: String
+    store: String
+    seller: String
 }

@@ -3,7 +3,10 @@
     "co-body": "^6.0.0",
     "ramda": "^0.25.0",
     "@types/uuid": "^9.0.6",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "bwip-js": "^4.5.2",
+    "svg64": "2.0.0",
+    "atob": "2.1.2"
   },
   "devDependencies": {
     "@types/co-body": "^0.0.3",

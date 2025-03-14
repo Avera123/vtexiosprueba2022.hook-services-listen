@@ -1946,7 +1946,7 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==
 
-atob@^2.1.2:
+atob@2.1.2, atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
@@ -2198,6 +2198,11 @@ busboy@^0.3.1:
   integrity sha512-y7tTxhGKXcyBxRKAni+awqx8uqaJKrSFSNFSeRG5CsWNdmy2BIK+6VGWEW7TZnIO/533mtMEA4rOevQV815YJw==
   dependencies:
     dicer "0.3.0"
+
+bwip-js@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/bwip-js/-/bwip-js-4.5.2.tgz#bc6058c6c7bebb1f4022b7e4a6d9f2c832f117ce"
+  integrity sha512-RObBQLA1Ncy0cvpLoUGiX7PWupfRiRTemQXf+9wobBKjgHb6rXwO2f2YCAVJjVlCRoTRRiL18++ZF2946Ys4QA==
 
 bytes@3.1.2, bytes@^3.0.0:
   version "3.1.2"
@@ -5743,6 +5748,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+svg64@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/svg64/-/svg64-2.0.0.tgz#058cb47255b3c44ebd6a74e15a7e2952fe2c93f7"
+  integrity sha512-EVgAisxMctUNDSjKGFcx4tkcFrvdqtLIy/MdbBdqcwfpPwsBcwoSKQi+WYoc82c4XWFNVVIwpCup3rpY+M9KJw==
 
 symbol-observable@^1.0.2:
   version "1.2.0"

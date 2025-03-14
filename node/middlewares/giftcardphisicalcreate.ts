@@ -50,7 +50,10 @@ export async function giftcardphisicalcreate(ctx: Context, next: () => Promise<a
     "idCustomer": userProfile[0].id ?? 'DEFAULT' ,
     "idGiftCard": createdNewGiftCard.id,
     "redemptionCode": createdNewGiftCard.redemptionCode,
-    "amount": body.amount
+    "amount": body.amount,
+    "amount_formatted": String(Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", minimumFractionDigits: 0}).format(Number(body.amount) ?? 0)),
+    "store":"Venta Online",
+    "seller":"Ecommerce"
   }, ctx)
 
   console.log({ createNewGiftCardMD })

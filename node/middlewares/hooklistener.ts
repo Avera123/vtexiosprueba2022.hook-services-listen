@@ -22,27 +22,19 @@ export async function hooklistener(ctx: Context, next: () => Promise<any>) {
 
   console.log(svg)
 
-  // const buf:any = await new Promise((resolve, reject) => {
-  //   bwipjs.toBuffer({
-  //     bcid: 'code128',       // Tipo de código de barras
-  //     text: 'FCHQ-UHVK-HDYJ-MBCL',    // Texto a codificar
-  //     scale: 3,               // Factor de escala 3x
-  //     height: 10,             // Altura de las barras en milímetros
-  //     includetext: true,      // Incluir texto legible
-  //     textxalign: 'center',   // Alineación del texto
-  //   }, function (err, png) {
-  //     if (err) {
-  //       reject(err); // Si hay un error, rechaza la Promise
-  //     } else {
-  //       resolve(png); // Si todo va bien, resuelve la Promise con el buffer
-  //     }
-  //   });
-  // });
+  const barcodeBuffer = await bwipjs.toBuffer({
+    bcid:  'code128',
+    text: 'FCHQ-UHVK-HDYJ-MBCL',
+    scale: 3,
+    height: 10,
+    includetext: true,
+  })
 
-  // // var atob = require('atob');
-  // console.log(String(buf))
+  const base64Barcode = barcodeBuffer.toString('base64')
 
-  // return
+  console.log(base64Barcode)
+
+  return
 
   // ctx.status = 200
   // ctx.body = {

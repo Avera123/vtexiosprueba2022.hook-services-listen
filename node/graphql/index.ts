@@ -1,4 +1,5 @@
-import { v5 as uuidv5 } from 'uuid';
+import { v5 as uuidv5 } from 'uuid'
+import bwipjs from 'bwip-js'
 
 const MY_NAMESPACE = 'f83d8282-2924-4a94-b93d-14910fbfbd8d'
 
@@ -228,6 +229,16 @@ export const resolvers = {
 
       console.log({ params })
 
+      const barcodeBuffer = await bwipjs.toBuffer({
+        bcid: 'code128',   
+        text: params.redemptionCode, 
+        scale: 2,
+        height: 8,
+        includetext: false,
+      })
+    
+      let gifBase64 = `data:image/png;base64,${barcodeBuffer.toString('base64')}`
+
       const { data } = await hub.post(routes.baseUrlEventsEntity(account, "giftcards_fds_v1"), headers, {
         "email": params.email ?? "DEFAULT",
         "order": params.order ?? "DEFAULT",
@@ -242,6 +253,7 @@ export const resolvers = {
         "amount_formatted": params.amount_formatted || "DEFAULT",
         "store": params.store || "Venta Online",
         "seller": params.seller || "Ecommerce",
+        "codebar_code": gifBase64 || "DEFAULT",
       })
 
       console.log({ data })
@@ -260,6 +272,16 @@ export const resolvers = {
 
       console.log({ params })
 
+      const barcodeBuffer = await bwipjs.toBuffer({
+        bcid: 'code128',   
+        text: params.redemptionCode, 
+        scale: 2,
+        height: 8,
+        includetext: false,
+      })
+    
+      let gifBase64 = `data:image/png;base64,${barcodeBuffer.toString('base64')}`
+
       const { data } = await hub.patch(routes.baseUrlGiftCardSimpleEntity(account, "giftcards_fds_v1", params.id), headers, {
         "amount": Number(params.amount) || 0,
         "order": params.order,
@@ -274,6 +296,7 @@ export const resolvers = {
         "amount_formatted": params.amount_formatted,
         "store": params.store || "Venta Online",
         "seller": params.seller || "Ecommerce",
+        "codebar_code": gifBase64 || "DEFAULT",
       })
 
       console.log({ data })

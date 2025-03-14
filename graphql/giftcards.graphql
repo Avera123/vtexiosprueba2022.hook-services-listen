@@ -30,6 +30,7 @@ input GiftCardMD{
     amount_formatted: String
     store: String
     seller: String
+    codebar_code: String
 }
 
 input GiftCardPatchAmountMD{
@@ -56,4 +57,5 @@ type GiftCardMDGetResponse{
     amount_formatted: String
     store: String
     seller: String
+    codebar_code: String
 }
